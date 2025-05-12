@@ -1,56 +1,102 @@
-/* === Base body styles === */
+/*File: style.css*/
+
+/*Body styles*/
 body {
   color: #421;
   font-weight: bold;
   font-size: 20px;
-  font-family: "courier new", monospace;
+  font-family: "Courier New", monospace;
   background: white;
   margin: 0;
   padding: 0;
 }
 
-/* === Span element styles === */
-span {
-  color: rgb(36, 17, 119);
-}
-
-/* === Placeholder text color for input fields (Webkit browsers) === */
-::-webkit-input-placeholder {
-  color: #711;
-}
-
-/* === Main container styles === */
+/* Main chat container */
 #main {
-  position: static;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
+  display: flex;
+  flex-direction: column;
+  height: 500px;
   width: 420px;
-  border: 0px solid #421;
   padding: 32px 20px;
   background: transparent;
   border-radius: 12px;
-  box-shadow: none;
   box-sizing: border-box;
-  margin-top: 40px;
-  margin-left: 200px;
+  margin-left: 10px;
 }
 
-/* === Inner divs inside #main === */
-#main div {
-  margin: 10px;
+/* Messages display area */
+#messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  background: white;
 }
 
-/* === User input text box styles === */
-#userInput {
+/* Shared message styles */
+#messages .message {
+  margin: 6px 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  max-width: 80%;
+  word-break: break-word;
+  font-weight: normal;
+  display: inline-block;
+  background: none;
+  color: inherit;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* User messages */
+#messages .user {
+  background: none;
+  color: red;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Bot messages */
+#messages .bot {
+  background: none;
+  color: blue;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Input area */
+.input-row {
+  display: flex;
+  align-items: left;
+  gap: 8px;
+}
+
+#input {
+  flex: 1;
   border: 1.5px solid #421;
   padding: 12px 16px;
   font-size: 20px;
   height: 40px;
-  width: 100%;
   box-sizing: border-box;
   border-radius: 4px;
   outline: none;
   background: #f8f8f2;
   color: #421;
+}
+
+#sendButton {
+  height: 40px;
+  font-size: 18px;
+  padding: 0 18px;
+  border: 1.5px solid #421;
+  background: #f8f8f2;
+  color: #421;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  cursor: pointer;
 }

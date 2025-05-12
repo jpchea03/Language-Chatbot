@@ -1,11 +1,21 @@
+<!--File: index.html-->
 <!DOCTYPE html>
-<head>
-  <title>Language Practice Chatbot</title>
-  <script type="text/javascript" src="script.js"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="main">
-    <input type="text" id="userInput" placeholder="Say something..." />
-  </div>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Language Practice Bot</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div class="input-row">
+        <input type="text" id="input" placeholder="Say something..." />
+        <button id="sendButton">Send</button>
+      </div>
+      <div id="messages"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
