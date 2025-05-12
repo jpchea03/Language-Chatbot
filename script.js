@@ -1,6 +1,6 @@
+/*File: script.js*/
 document.addEventListener("DOMContentLoaded", () => {
   const inputField = document.getElementById("input");
-  const mainDiv = document.getElementById("main");
 
   inputField.addEventListener("keydown", function (e) {
     if (e.code === "Enter") {
@@ -22,9 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayMessage(sender, message) {
     const msgDiv = document.createElement("div");
-    msgDiv.className = sender;
+    msgDiv.className = `${sender} message`;
     msgDiv.textContent = (sender === "user" ? "You: " : "Bot: ") + message;
     document.getElementById("messages").appendChild(msgDiv);
+    scrollToBottom();
+  }
+
+  function scrollToBottom() {
+    const messages = document.getElementById("messages");
+    messages.scrollTop = messages.scrollHeight;
   }
 
   function output(input) {
