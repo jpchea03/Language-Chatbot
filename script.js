@@ -1,4 +1,4 @@
-/*File: script.js*/
+/*script.js*/
 document.addEventListener("DOMContentLoaded", () => {
   const inputField = document.getElementById("input");
 
@@ -34,7 +34,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function output(input) {
-    // Placeholder response
-    displayMessage("bot", "Hello, world!");
+    fetch("http://localhost:3001/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        messages: [
+          { role: "system", content: "You are a helpful assistant." },
+          { role: "user", content: input },
+        ],
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const reply =
+          data.choices?.[0]?.message?.content || "No response from OpenAI.";
+        displayMessage("bot", reply);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        displayMessage("bot", "Sorry, something went wrong.");
+      });
   }
 });
