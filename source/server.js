@@ -1,4 +1,8 @@
-/*server.js*/
+/*
+server.js
+Author: Joseph Cheatham
+*/
+
 //load evironment variables
 require("dotenv").config();
 

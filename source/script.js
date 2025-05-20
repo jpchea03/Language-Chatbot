@@ -1,4 +1,7 @@
-/*script.js*/
+/*
+script.js
+Author: Joseph Cheatham
+*/
 
 // Wait for the DOM to load before executing the script
 document.addEventListener("DOMContentLoaded", () => {
